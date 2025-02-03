@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Abhas, I'm Sorry</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <style>
+      body {
+        background-color: #1a1a2e;
+        color: white;
+        font-family: "Courier New", Courier, monospace;
+      }
+      .console {
+        border: 2px solid #0ef;
+        padding: 20px;
+        border-radius: 10px;
+        background: black;
+        width: 80%;
+        margin: auto;
+        min-height: 200px;
+        font-size: 1.2rem;
+      }
+      .btn {
+        transition: transform 0.3s;
+      }
+      .btn:hover {
+        transform: scale(1.1);
+      }
+    </style>
+  </head>
+  <body
+    class="flex flex-col items-center justify-center min-h-screen text-center"
+  >
+    <h1 class="text-4xl font-bold text-pink-400 animate-pulse">
+      Abhas, I Messed Up 💔
+    </h1>
+    <p class="mt-3 text-lg">But let me debug our love, Vartika</p>
+
+    <div class="console mt-5" id="console">
+      <p class="text-green-400">Initializing Apology...</p>
+    </div>
+
+    <button
+      class="btn bg-blue-500 text-white px-5 py-3 rounded-lg mt-5"
+      onclick="runApology()"
+    >
+      Run Apology Code 💻
+    </button>
+
+    <script>
+      function runApology() {
+        let consoleText = [
+          "git init",
+          "git add love",
+          'git commit -m "Abhas, I am sorry 😔"',
+          "git push --force-with-love ❤️",
+          "Error: Love branch is protected",
+          "Creating pull request for forgiveness... 🔄",
+          "Merge Conflict Detected! Need Abhas's Approval 💕",
+        ];
+
+        let consoleDiv = document.getElementById("console");
+        consoleDiv.innerHTML = "";
+
+        consoleText.forEach((text, index) => {
+          setTimeout(() => {
+            let p = document.createElement("p");
+            p.classList.add("text-green-400");
+            p.innerText = text;
+            consoleDiv.appendChild(p);
+          }, index * 1000);
+        });
+      }
+    </script>
+  </body>
+</html>
